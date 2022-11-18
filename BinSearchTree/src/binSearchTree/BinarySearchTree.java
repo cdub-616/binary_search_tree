@@ -20,8 +20,8 @@ package binSearchTree;
 
 public class BinarySearchTree {
 
-   private Node root = new Node();
-   public int initInd = 0;
+   private Node root = new Node();  //point to root node of tree
+   public int initInd = 0;          //initial indent is zero
 
    public BinarySearchTree() {
       root = null;
@@ -41,10 +41,10 @@ public class BinarySearchTree {
    }
 
    public String find(int key) {
-      return root.find(key);
+      return root.find(key);              //start recursive call at root
    }
 
    public void print() {
-      root.print(initInd);
+      root.print(initInd);                //start recursive call at root
    }
 }

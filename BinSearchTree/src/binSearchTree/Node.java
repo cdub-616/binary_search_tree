@@ -21,9 +21,9 @@ package binSearchTree;
 
 public class Node {
 
-   public Entry value = new Entry();
-   public Node left,
-               right;
+   public Entry value = new Entry();  //data to be stored
+   public Node left,                  //left child
+               right;                 //right child
  
    public Node() {
       this.left = null;
@@ -60,20 +60,24 @@ public class Node {
          System.out.print(" ");
       System.out.print("+--- " + this.value.key + ": ");
       System.out.println(this.value.value);
-      if (left != null)
-         left.print(indent + 1);
-      if (right != null)
-         right.print(indent + 1);
+      if (left != null)  //if left child exists
+      //recursive call to print left child and increase indent
+         left.print(indent + 1);   
+      if (right != null) //if right child exists
+      //recursive call to print right child and increase indent
+         right.print(indent + 1);  
    }
 
    public String find(int key) {
-      if (this.value.key == key)
+      if (this.value.key == key)  //check this node entry for match
          return this.value.value;
-      else if ((key < this.value.key) && (this.left != null))
-         return left.find(key);
+      //if desired key is less than this key and left child exists
+      else if ((key < this.value.key) && (this.left != null))  
+         return left.find(key);   //recursive call on left child
+      //if desired key is more than this key and right child exists
       else if ((key > this.value.key) && (this.left != null))
-         return right.find(key);
+         return right.find(key);  //recursive call on right child
       else
-         return "";  //return empty string if not found
+         return "";               //return empty string if not found
    }
 }
