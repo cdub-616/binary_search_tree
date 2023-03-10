@@ -20,16 +20,11 @@ package binSearchTree;
 
 public class BinarySearchTree {
 
-<<<<<<< HEAD
-   private Node root_ptr = new Node();  //point to root node of tree
+   private Node root = new Node();  //point to root node of tree
    public int initInd = 0;          //initial indent is zero
-=======
-   private Node root = new Node();
-   public int initInd = 0;
->>>>>>> parent of 528e2ef (final changes)
 
    public BinarySearchTree() {
-   root_ptr = null;
+   root = null;
    }
 
    public String about() {
@@ -37,27 +32,19 @@ public class BinarySearchTree {
    }
 
    public void add(Entry entry) {         
-      if (root_ptr != null)                   //if root node exists
-      root_ptr.add(entry);                 //add new node to tree
+      if (root != null)                   //if root node exists
+      root.add(entry);                    //add new node to tree
       else {
          Node newRoot = new Node(entry);  //else create new node
-         root_ptr = newRoot;                  //new node becomes root
+         root = newRoot;                  //new node becomes root
       }
    }
 
    public String find(int key) {
-<<<<<<< HEAD
-      return root_ptr.find(key);              //start recursive call at root
+      return root.find(key);              //start recursive call at root
    }
 
    public void print() {
-   root_ptr.print(initInd);                //start recursive call at root
-=======
-      return root.find(key);
-   }
-
-   public void print() {
-      root.print(initInd);
->>>>>>> parent of 528e2ef (final changes)
+   root.print(initInd);                   //start recursive call at root
    }
 }
